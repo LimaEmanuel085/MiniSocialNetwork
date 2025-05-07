@@ -3,8 +3,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const routes = require('./routes');
 
 const app = express();
@@ -18,7 +16,7 @@ mongoose.connect(`mongodb+srv://${mongoUser}:${mongoPassword}@clusterlogin.zdmop
 
     app.listen(3000, () => {        
         console.log('Conectado ao MongoDB Atlas');
-        console.log('Serveridor rodando na porta 3000');
+        console.log('Serveridor rodando em https://minisocialnetwork.onrender.com');
     });
     
 }).catch((err) => console.log(err));
