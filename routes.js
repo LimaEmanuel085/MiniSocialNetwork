@@ -30,6 +30,6 @@ route.get('/user/profile/:id', verifyJWT.checkToken ,profileController.viewProfi
 route.put('/user/profile/:id', verifyJWT.checkToken ,profileController.updateProfile);
 route.delete('/user/profile/:id', verifyJWT.checkToken ,profileController.deleteProfile);
 
-route.post('/user/friends/:id', verifyJWT.checkToken ,friendsController.addFriend);
+route.post('/user/friends/:userId', verifyJWT.checkToken ,friendsController.addFriend);
 
 module.exports = route;
