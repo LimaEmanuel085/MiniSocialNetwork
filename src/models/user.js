@@ -12,7 +12,8 @@ const User = mongoose.mongoose.model('User', {
     password: {
         type: String,
         required: true
-    }
+    },
+    friends: []
 })
 
 module.exports = User;

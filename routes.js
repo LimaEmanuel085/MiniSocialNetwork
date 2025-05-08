@@ -6,6 +6,7 @@ const userController = require('./src/controllers/userController');
 const loginController = require('./src/controllers/loginController');
 const profileController = require('./src/controllers/profileController');
 const adminController = require('./src/controllers/adminController');
+const friendsController = require('./src/controllers/friendsController');
 
 const verifyJWT = require('./src/middlewares/verifyJWT');
 const adminVerify = require('./src/middlewares/adminVerify');
@@ -28,5 +29,7 @@ route.post('/user/login', loginController.loginUser);
 route.get('/user/profile/:id', verifyJWT.checkToken ,profileController.viewProfile);
 route.put('/user/profile/:id', verifyJWT.checkToken ,profileController.updateProfile);
 route.delete('/user/profile/:id', verifyJWT.checkToken ,profileController.deleteProfile);
+
+route.post('/user/friends/:id', verifyJWT.checkToken ,friendsController.addFriend);
 
 module.exports = route;
